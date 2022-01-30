@@ -1,0 +1,57 @@
+.share-tooltip {
+    display: none;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em 2em;
+    background-color: hsl(217, 19%, 35%);
+
+    > .share-btn {
+        all: unset;
+        padding: 1em;
+        background-color: hsl(212, 23%, 69%);
+        border-radius: 50%;
+    }
+
+    &.-active {
+        display: flex;
+    }
+
+    @media only screen and (min-width: 768px) {
+        display: flex;
+        width: auto;
+        left: 70%;
+        bottom: 35%;
+        border-radius: .5em;
+
+        > .share-btn {
+            display: none;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -10px;
+            border-width: 10px;
+            border-style: solid;
+            border-color: hsl(217, 19%, 35%) transparent transparent transparent;
+        }
+    }
+}
+
+.social-menu {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+
+    > .item > .label {
+        text-transform: uppercase;
+        letter-spacing: .5em;
+        color: hsl(212, 23%, 69%);
+    }
+}
